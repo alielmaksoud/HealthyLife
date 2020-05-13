@@ -1,0 +1,7 @@
+{
+    "env":{
+        "MONGO_USER":"reyhanb",
+        "MONGO_PASSWORD":"297mwu0nUgt1Wi74",
+        "MONGO_DB":"healthy-life"
+    }
+}
