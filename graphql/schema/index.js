@@ -50,10 +50,10 @@ type RootQuery{
     login(email: String!, password: String!): AuthData!
 }
 type RootMutation{
-    createEvent(eventInput:EventInput):Event
-    createUser(userInput:UserInput):User 
-    bookEvent(eventId:ID!):Booking!
-    canselBooking(bookingId:ID!):Event
+    createEvent(eventInput: EventInput):Event
+    createUser(userInput: UserInput):User 
+    bookEvent(eventId: ID!):Booking!
+    cancelBooking(bookingId: ID!):Event
 }
 schema{
     query: RootQuery
