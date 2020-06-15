@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 const Schema=mongoose.Schema;
-const eventShema=new Schema({
+const eventSchema=new Schema({
     title:{
         type: String,
         required:true
@@ -23,4 +23,4 @@ const eventShema=new Schema({
     }
 
 });
-module.exports=mongoose.model('Event',eventShema);
+module.exports=mongoose.model('Event',eventSchema);
