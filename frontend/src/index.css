@@ -4,18 +4,18 @@ body {
   font-family: sans-serif;
 }
 
-.form-control label,
-.form-control input,
-.form-control textarea {
+.form-control-f label,
+.form-control-f input,
+.form-control-f textarea {
   width: 100%;
   display: block;
 }
 
-.form-control label {
+.form-control-f label {
   margin-bottom: 0.5rem;
 }
 
-.form-control {
+.form-control-f {
   margin-bottom: 1rem;
 }
 

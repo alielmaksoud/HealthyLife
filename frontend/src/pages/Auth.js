@@ -12,6 +12,7 @@ class AuthPage extends Component {
         super(props);
         this.emailEl = React.createRef();
         this.passwordEl = React.createRef();
+        this.fullNameEl = React.createRef();
       }
     
       switchModeHandler = () => {
@@ -56,10 +57,11 @@ class AuthPage extends Component {
             `
     */
         if (!this.state.isLogin) {
+        const fullName = this.fullNameEl.current.value;
           requestBody = {
             query: `
-              mutation CreateUSer ($email: String!, $password: String!) {
-                createUser(userInput: {email: $email, password: $password}) {
+              mutation CreateUser ($email: String!, $fullName:String! $password: String!) {
+                createUser(userInput: {email: $email, fullName:$fullName password: $password}) {
                   _id
                   email
                 }
@@ -67,7 +69,8 @@ class AuthPage extends Component {
             `,
             variables: {
               email: email,
-              password: password
+              password: password,
+              fullName: fullName
             }
           };
         }
@@ -101,18 +104,23 @@ class AuthPage extends Component {
     render(){
         return(
             <form className="auth-form" onSubmit={this.submitHandler}>
-            <div className="form-control">
+            <div className="form-control-f">
               <label htmlFor="email">E-Mail</label>
               <input type="email" id="email" ref={this.emailEl} />
             </div>
-            <div className="form-control">
-              <label htmlFor="password">Password</label>
+            {this.state.isLogin ? '':
+            <div className="">
+              <label htmlFor="fullName">Ad Soyad</label>
+              <input type="fullName" id="fullName" ref={this.fullNameEl} />
+            </div> }
+            <div className="form-control-f">
+              <label htmlFor="password">Şifre</label>
               <input type="password" id="password" ref={this.passwordEl} />
             </div>
             <div className="form-actions">
-              <button type="submit">Submit</button>
+              <button type="submit">Giriş Yap</button>
               <button type="button" onClick={this.switchModeHandler}>
-                Switch to {this.state.isLogin ? 'Signup' : 'Login'}
+                {this.state.isLogin ? 'Üye Ol' : 'Giriş Yap'}
               </button>
             </div>
           </form>

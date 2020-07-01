@@ -23,9 +23,9 @@ const userInfoSchema = new Schema({
         type:Number,
         required:true
     },
-    userId:{
-            type:Schema.Types.ObjectId,
-            ref:'User'
+    user:{
+        type:Schema.Types.ObjectId,
+        ref:'User'
     }
 });
 

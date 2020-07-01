@@ -7,8 +7,12 @@ const foodSchema = new Schema({
         type:String,
         required:true
     },
-    quantity:{
+    description:{
         type:String,
+        required:true
+    },
+    quantity:{
+        type:Number,
         required:true
     },
     servingSize:{
@@ -38,9 +42,7 @@ const foodSchema = new Schema({
     sugar:{
         type:Number,
         required:true
-    },
-    image: 
-      { data: Buffer, contentType: String }
+    }
 });
 
 module.exports= mongoose.model('Food',foodSchema);

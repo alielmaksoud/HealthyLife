@@ -11,17 +11,13 @@ const userInfoSchema = new Schema({
             type:Schema.Types.ObjectId,
             ref:'User'
     },
-    foodId:{
+    food:{
             type:Schema.Types.ObjectId,
             ref:'Food'
     },
     repastId: {
             type:Schema.Types.ObjectId,
             ref:'Repast'
-    },
-    quantity:{
-        type:String,
-        required:true
     }
 });
 

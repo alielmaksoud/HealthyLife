@@ -9,23 +9,46 @@ const mainNavigation = props => (
             return(
                 <header className="main-navigation">
                     <div className="main-navigation__logo">
-                        <h1>EasyEvent</h1>
+                        <h1>Yaşam Asistanım</h1>
                     </div>
                     <nav className="main-navigation__items">
                         <ul>
                             {!context.token && (<li>
-                                <NavLink to="/auth">Authenticate</NavLink>
+                                <NavLink to="/auth">Kayıt Ol</NavLink>
                             </li> )}
                             <li>
-                                <NavLink to="/events">Events</NavLink>
+                                <NavLink to="/events">
+                                    
+                                </NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/homepage">Anasayfa</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/calculations">Hesaplamalar</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/kacKalori">Kaç Kalori</NavLink>
+                            </li>
+
                             {context.token && (
                                 <React.Fragment>
+
                                     <li>
-                                        <NavLink to="/bookings">Bookings</NavLink>
+                                        <NavLink to="/suTakip">Su Takipçisi</NavLink>
+                                    </li>  
+                                    <li>
+                                        <NavLink to="/kaloriTakip">Kalori Takip</NavLink>
+                                    </li>                          
+                                    <li>
+                                        <NavLink to="/bookings"></NavLink>
                                     </li>
                                     <li>
-                                        <button onClick={context.logout}>Logout</button>
+                                        <NavLink to="/profile">Profil</NavLink>
+                                    </li>
+                                    
+                                    <li>
+                                        <button onClick={context.logout}>Çıkış Yap</button>
                                     </li>
                                 </React.Fragment> 
                             )}
